@@ -1,0 +1,87 @@
+body {
+	background-image: url("currency.png");
+	background-attachment: fixed;
+}
+
+.container {
+	position: sticky;
+
+}
+
+#input-body {
+	
+}
+
+#head-main {
+	background-color: #4CAF50; /*rgb(202, 232, 202);*/
+	border: 2px solid #4CAF50;
+	height: 37px;
+	padding: 5px 0 0 10px;
+	font-size: 20px;
+	font-family: "Times New Roman", Times, serif;
+	color: white;
+	margin-bottom: 0;
+}
+
+#main {
+	background-color: rgba(202, 232, 202, .8);
+	height: 150px;
+	padding-left: 100px;
+	border: 2px solid green;
+}
+
+.input-group {
+	padding-left: 80px;
+}
+
+select {
+	float: left;
+	height: 33px;
+	width: 130px;
+}
+
+#ammount {
+	width: 160px;
+}
+
+#conv {
+	margin-top: 30px;
+	float: center;
+}
+
+#zzz , #zz , #z {
+	width: 33%;
+	float: left;
+	display: inline-flex;
+}
+
+@media (max-width: 1000px) {
+	#zzz , #zz , #z {
+		width: 100%;
+		margin-top: 10px;
+	}
+	#conv {
+		margin-top: 30px;
+		float: right;
+	}
+	#main {
+		height: 250px;
+	}
+}
+
+/* Design of output div */
+
+#output {
+	background-color: rgba(202, 232, 202, .8);
+	text-align: center;
+}
+
+#amountA , #amountB , #equal {
+	font-size: 80px;
+	color: #6fce75;;
+	font-family: "Comic Sans MS", cursive, sans-serif ;
+}
+
+#equal {
+	color: #81937f;
+}
