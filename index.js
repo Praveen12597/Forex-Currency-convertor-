@@ -50,9 +50,21 @@ window.onload=func1;
 function search() {
 
 	curencyA = baseCurrency.value;
+	curencyB = anotherCurrency.value;
 	amount = document.querySelector("#ammount").value;
 
-	var url = `https://exchangeratesapi.io/api/latest?base=${curencyA}`;
+	if (curencyA === "Select Currency" || curencyB === "Select Currency" || amount == "" || amount <= 0) {
+		alert("Invalid Input");
+		// clearing the div . . .
+		A.innerHTML = "";
+		E.innerHTML = "";
+		B.innerHTML = "";
+		// removing well class from div . . .
+		outputDiv.classList.remove("well");
+	}
+	else {
+
+		var url = `https://exchangeratesapi.io/api/latest?base=${curencyA}`;
 	// alert(curencyA);
 
 	fetch(url)
@@ -64,13 +76,16 @@ function search() {
 		})
 		.catch(function(error) {
 			console.log("Error During fetch: " + error.message);
-			alert("Error During fetch: " + "Please Cheque Your Internet Connection");
+			alert("Error During fetch: Please Cheque Your Internet Connection or input fields");
 		});
+	}
+
+	
 }
 
 function convert(val) {
 
-	curencyB = anotherCurrency.value;
+	//curencyB = anotherCurrency.value;
 
 	//alert(curencyB);
 	//alert(curencyA);
@@ -78,7 +93,7 @@ function convert(val) {
 	// Adding a class to div
 	outputDiv.classList.add("well");
 
-	console.log(amount);
+	//console.log(amount);
 
 	A.innerHTML = amount + " " + curencyA; //val.rates[curencyB] ;
 	E.innerHTML = "=" ;
@@ -96,19 +111,30 @@ function find() {
 
 	choice = document.querySelector("#curr").value;
 
-	var url = `https://exchangeratesapi.io/api/latest?base=${choice}`;
+	if (choice === "Select Currency") {
+		alert("Invalid input");
+		divOutput2.innerHTML = "";
+	}
+	else{
+		alert("########################");
 
-	fetch(url)
-		.then(function(response2) {
-			return response2.json();
-		})
-		.then(function(val2) {
-			findRate(val2)
-		})
-		.catch(function(error2) {
-			console.log("Error During fetch: " + error2.message);
-			alert("Error During fetch: " + "Please Cheque Your Internet Connection");
-		});
+		var url = `https://exchangeratesapi.io/api/latest?base=${choice}`;
+
+		fetch(url)
+			.then(function(response2) {
+				return response2.json();
+			})
+			.then(function(val2) {
+				findRate(val2)
+			})
+			.catch(function(error2) {
+				console.log("Error During fetch: " + error2.message);
+				alert("Error During fetch: " + "Please Cheque Your Internet Connection");
+			});
+
+	}
+
+	
 }
 
 function findRate(val2) {
@@ -117,18 +143,22 @@ function findRate(val2) {
 	console.log(choice);
 	test = val2;
 
-	for (r in val2.rates) {
+	// clearing the output div for new result . . .
+	x = "";
+	divOutput2.innerHTML = x ;
+
+	//for (r in val2.rates) {
 		//console.log(val2.rates[r]);
-	}
+	//}
 
 	for (a in val2.rates) {
 	    
-	    console.log(a +" " +test.rates[a]);
+	    //console.log(a +" " +test.rates[a]);
 
 	    x += '<div class="well" id="output">  <h1>' + a + ' = ' +val2.rates[a] + '  </h1> </div>';
 
 	}
 
-	 $('#output2').append(x);
+	$('#output2').append(x);
 
 }
