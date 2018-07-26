@@ -1,3 +1,4 @@
+/*	variable for first form  */
 var baseCurrency = "";
 var anotherCurrency = "";
 var amount = "";
@@ -13,6 +14,19 @@ var E = "";
 
 var totaAmount = "";
 
+/* variables of Second form  FIND RATE */
+
+var choice = "";
+
+var divOutput2 = "";
+
+var test = "";
+
+var x = "";
+
+/*====================================================================================================*/
+
+
 function func1() {
   
  	 baseCurrency = document.querySelector("#bcurency");
@@ -23,6 +37,10 @@ function func1() {
 	 A = document.querySelector("#amountA");
 	 B = document.querySelector("#amountB");
 	 E = document.querySelector("#equal");
+
+	 /*	 for find rate	*/
+
+	 divOutput2 = document.querySelector("#output2");
 
 }
 window.onload=func1;
@@ -62,12 +80,55 @@ function convert(val) {
 
 	console.log(amount);
 
-	A.innerHTML = amount + " " + baseCurrency.value; //val.rates[curencyB] ;
+	A.innerHTML = amount + " " + curencyA; //val.rates[curencyB] ;
 	E.innerHTML = "=" ;
 
 	// calculating total value after conversion 
 	totaAmount = amount * val.rates[curencyB] ;
 
-	B.innerHTML = totaAmount.toFixed(4); + " " + anotherCurrency.value ;
+	B.innerHTML = totaAmount.toFixed(4) + " " + curencyB ;
+
+}
+
+/*======================================================================================================*/
+
+function find() {
+
+	choice = document.querySelector("#curr").value;
+
+	var url = `https://exchangeratesapi.io/api/latest?base=${choice}`;
+
+	fetch(url)
+		.then(function(response2) {
+			return response2.json();
+		})
+		.then(function(val2) {
+			findRate(val2)
+		})
+		.catch(function(error2) {
+			console.log("Error During fetch: " + error2.message);
+			alert("Error During fetch: " + "Please Cheque Your Internet Connection");
+		});
+}
+
+function findRate(val2) {
+	console.log(val2);
+	console.log(divOutput2);
+	console.log(choice);
+	test = val2;
+
+	for (r in val2.rates) {
+		//console.log(val2.rates[r]);
+	}
+
+	for (a in val2.rates) {
+	    
+	    console.log(a +" " +test.rates[a]);
+
+	    x += '<div class="well" id="output">  <h1>' + a + ' = ' +val2.rates[a] + '  </h1> </div>';
+
+	}
+
+	 $('#output2').append(x);
 
 }

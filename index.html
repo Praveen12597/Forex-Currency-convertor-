@@ -149,7 +149,63 @@
 
 		</div>
 
-		
+		<div id="curency_rate">
+
+			<div id="head-main">
+				<span class="glyphicon glyphicon-globe" aria-hidden="true" ><strong>&nbsp;Currency Exchange Rate</strong></span>
+			</div>
+			
+			<div class="well" id="main2">
+				<div class="style1">
+					<h1>Select base currency</h1>
+
+					<select id="curr">
+					  		<option>Select Currency</option>
+							<option value="AUD" > AUD </option>  
+							<option value="BGN" > BGN </option>  
+							<option value="BRL" > BRL </option>  
+							<option value="CAD" > CAD </option>  
+							<option value="CHF" > CHF </option>  
+							<option value="CNY" > CNY </option>  
+							<option value="CZK" > CZK </option>  
+							<option value="DKK" > DKK </option>  
+							<option value="EUR" > EUR </option>  
+							<option value="GBP" > GBP </option>  
+							<option value="HKD" > HKD </option>  
+							<option value="HRK" > HRK </option>  
+							<option value="HUF" > HUF </option>  
+							<option value="IDR" > IDR </option>  
+							<option value="ILS" > ILS </option>  
+							<option value="INR" > INR </option>  
+							<option value="ISK" > ISK </option>  
+							<option value="JPY" > JPY </option>  
+							<option value="KRW" > KRW </option>  
+							<option value="MXN" > MXN </option>  
+							<option value="MYR" > MYR </option>  
+							<option value="NOK" > NOK </option>  
+							<option value="NZD" > NZD </option>  
+							<option value="PHP" > PHP </option>  
+							<option value="PLN" > PLN </option>  
+							<option value="RON" > RON </option>  
+							<option value="RUB" > RUB </option>  
+							<option value="SEK" > SEK </option>  
+							<option value="SGD" > SGD </option>  
+							<option value="THB" > THB </option>  
+							<option value="TRY" > TRY </option>  
+							<option value="USD" > USD </option>  
+							<option value="ZAR" > ZAR </option>  
+						</select>
+
+						<button type="button" class="btn btn-success" id="FR" onclick="find()">Find Rate</button>
+				</div>
+
+			</div>
+			
+		</div>
+
+		<div id="output2">
+				
+		</div>
 
 	</div>
 
@@ -157,97 +213,3 @@
 </body>
 
 </html>
-
-
-<!-- 
-			<div class="input-group">
-
-			  <span class="input-group-addon" id="basic-addon1"><strong>Amount</strong></span>
-			  <input type="number" class="form-control" placeholder="amount" aria-describedby="basic-addon1" id="ammount" >
-
-			  <span class="input-group-addon" id="basic-addon1"><strong>From</strong></span>
-			  	
-				<select>
-					<option selected>Select Currency</option>
-					<option value="AUD" > AUD </option>  
-					<option value="BGN" > BGN </option>  
-					<option value="BRL" > BRL </option>  
-					<option value="CAD" > CAD </option>  
-					<option value="CHF" > CHF </option>  
-					<option value="CNY" > CNY </option>  
-					<option value="CZK" > CZK </option>  
-					<option value="DKK" > DKK </option>  
-					<option value="EUR" > EUR </option>  
-					<option value="GBP" > GBP </option>  
-					<option value="HKD" > HKD </option>  
-					<option value="HRK" > HRK </option>  
-					<option value="HUF" > HUF </option>  
-					<option value="IDR" > IDR </option>  
-					<option value="ILS" > ILS </option>  
-					<option value="INR" > INR </option>  
-					<option value="ISK" > ISK </option>  
-					<option value="JPY" > JPY </option>  
-					<option value="KRW" > KRW </option>  
-					<option value="MXN" > MXN </option>  
-					<option value="MYR" > MYR </option>  
-					<option value="NOK" > NOK </option>  
-					<option value="NZD" > NZD </option>  
-					<option value="PHP" > PHP </option>  
-					<option value="PLN" > PLN </option>  
-					<option value="RON" > RON </option>  
-					<option value="RUB" > RUB </option>  
-					<option value="SEK" > SEK </option>  
-					<option value="SGD" > SGD </option>  
-					<option value="THB" > THB </option>  
-					<option value="TRY" > TRY </option>  
-					<option value="USD" > USD </option>  
-					<option value="ZAR" > ZAR </option>  
-				</select>
-
-			  <span class="input-group-addon" id="basic-addon1" style="width: 60px;"><STRONG>To</STRONG></span>
-			  	
-			  	<select>
-			  		<option selected>Select Currency</option>
-					<option value="AUD" > AUD </option>  
-					<option value="BGN" > BGN </option>  
-					<option value="BRL" > BRL </option>  
-					<option value="CAD" > CAD </option>  
-					<option value="CHF" > CHF </option>  
-					<option value="CNY" > CNY </option>  
-					<option value="CZK" > CZK </option>  
-					<option value="DKK" > DKK </option>  
-					<option value="EUR" > EUR </option>  
-					<option value="GBP" > GBP </option>  
-					<option value="HKD" > HKD </option>  
-					<option value="HRK" > HRK </option>  
-					<option value="HUF" > HUF </option>  
-					<option value="IDR" > IDR </option>  
-					<option value="ILS" > ILS </option>  
-					<option value="INR" > INR </option>  
-					<option value="ISK" > ISK </option>  
-					<option value="JPY" > JPY </option>  
-					<option value="KRW" > KRW </option>  
-					<option value="MXN" > MXN </option>  
-					<option value="MYR" > MYR </option>  
-					<option value="NOK" > NOK </option>  
-					<option value="NZD" > NZD </option>  
-					<option value="PHP" > PHP </option>  
-					<option value="PLN" > PLN </option>  
-					<option value="RON" > RON </option>  
-					<option value="RUB" > RUB </option>  
-					<option value="SEK" > SEK </option>  
-					<option value="SGD" > SGD </option>  
-					<option value="THB" > THB </option>  
-					<option value="TRY" > TRY </option>  
-					<option value="USD" > USD </option>  
-					<option value="ZAR" > ZAR </option>  
-				</select>
-
-			</div>
-
-			<div>
-				<button type="button" class="btn btn-success" id="conv">CONVERT</button>
-			</div>
-
-
- -->

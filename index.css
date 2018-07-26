@@ -27,7 +27,9 @@ body {
 	background-color: rgba(202, 232, 202, .8);
 	height: 150px;
 	padding-left: 100px;
-	border: 2px solid green;
+	box-shadow: 5px 5px 5px grey;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 
 .input-group {
@@ -74,14 +76,75 @@ select {
 #output {
 	background-color: rgba(202, 232, 202, .8);
 	text-align: center;
+
+	box-shadow: 7px 7px 5px grey;
+	border-radius: 20px;
+	border: 2px solid grey;
 }
 
 #amountA , #amountB , #equal {
 	font-size: 80px;
-	color: #6fce75;;
+	color: #6fce75;
 	font-family: "Comic Sans MS", cursive, sans-serif ;
+	text-shadow: 2px 2px yellow;
 }
 
 #equal {
 	color: #81937f;
 }
+
+/*	new div	FIND EXCHANGE RATE	*/
+
+#main2 {
+	background-color: rgba(202, 232, 202, .8);
+	box-shadow: 5px 5px 5px grey;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+#curency_rate {
+	position: sticky;
+	top: 0px;
+}
+
+.style1 {
+	text-align: center;
+}
+
+.style1 h1 {
+	text-shadow: 2px 2px 1px black;
+}
+
+#FR {
+	display: flex;
+	position: relative;
+	left: 40%;
+}
+
+#curr {
+	position: relative;
+	left: 40%;
+}
+
+#output2 {
+	color: white;
+	text-shadow: 2px 2px 5px black;
+}
+
+
+/* Testng 
+
+
+#input-body {
+	border: 2px solid red;
+}
+
+.container {
+	border: 2px solid blue;
+}
+
+#curency_rate {
+	border: 2px solid yellow;
+}
+
+*/
