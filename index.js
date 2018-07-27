@@ -116,7 +116,6 @@ function find() {
 		divOutput2.innerHTML = "";
 	}
 	else{
-		alert("########################");
 
 		var url = `https://exchangeratesapi.io/api/latest?base=${choice}`;
 
